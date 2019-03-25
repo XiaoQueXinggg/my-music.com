@@ -1,0 +1,41 @@
+{
+	"ret":true,
+	"data":{
+		"discList":[{
+			"imgUrl":"//p.qpic.cn/music_cover/ibSiagqKjw1zfTgxY7F8CfE762uIfxBlic6deCrRxjrwJlJHRkIQKTWhw/300?n=1",
+			"id":"001",
+			"count":"5085",
+			"desc":"每日新歌：唱尽繁华，盛世烟花"
+		},{
+			"imgUrl":"//p.qpic.cn/music_cover/JBDCVgqXWXaYUvcsElqcicbHAoNYenibsGwvbWb2LFV4RmuPenEXKVNg/300?n=1",
+			"id":"002",
+			"count":"2.9万",
+			"desc":"深情的嗓音是药，单曲循环有疗效"
+		},{
+			"imgUrl":"//p.qpic.cn/music_cover/ESQkDB4ohgibFpRT23xHVFeg9FGttuF4ibx1gMaj7ymJictUjJFrTRdOg/300?n=1",
+			"id":"003",
+			"count":"8.6万",
+			"desc":"达人周末 | 适合踏青听的华语民谣"
+		},{
+			"imgUrl":"//p.qpic.cn/music_cover/R8unPZMA4Vp5v2Ms96bst1zVl5GjYgTsrl6TTtibdQLyWhSQaaEba1Q/300?n=1",
+			"id":"004",
+			"count":"9.9万",
+			"desc":"不药自愈：孤独青年爱抒情"
+		},{
+            "imgUrl":"//p.qpic.cn/music_cover/nvRBiaJHaPBvG00iczEYfbu8xatvkYfTFbBkElnvZgqepn7m9Tr6y1gA/300?n=1",
+            "desc":"华语无损 | 上班途中徜徉完美音海",
+            "id":"005",
+            "count":"9.3万"
+        },{
+			"imgUrl":"//p.qpic.cn/music_cover/JBDCVgqXWXaYUvcsElqcicbHAoNYenibsGwvbWb2LFV4RmuPenEXKVNg/300?n=1",
+			"id":"002",
+			"count":"2.9万",
+			"desc":"深情的嗓音是药，单曲循环有疗效"
+		},{
+			"imgUrl":"//p.qpic.cn/music_cover/ESQkDB4ohgibFpRT23xHVFeg9FGttuF4ibx1gMaj7ymJictUjJFrTRdOg/300?n=1",
+			"id":"003",
+			"count":"8.6万",
+			"desc":"达人周末 | 适合踏青听的华语民谣"
+		}]
+	}	
+}
