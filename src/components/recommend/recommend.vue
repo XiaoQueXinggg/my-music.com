@@ -3,26 +3,26 @@
   	<scroll class="recommend-content" :data="postdiscList">
   		<div>
         <div v-if="recommends.length" class="slider-wrapper">
-        <slider>
-            <div v-for="item of recommends">
-              <a :href="item.linkUrl">
-                <img :src="item.picUrl">
-              </a>
-            </div>   
-        </slider>
-      </div>
-      <div class="recommend-list">
-        <h1 class="list-title">热门歌单推荐</h1>
-        <ul>
-            <li v-for="item of discList" class="item">
-              <img :src="item.imgUrl" class="item-img">
-              <div class="item-info">
-                 <p class="item-desc" v-html="item.desc"></p>
-                 <p class="item-count">播放量：{{item.count}}</p>
-              </div>  
-            </li>       
-        </ul>
-      </div>  
+          <slider>
+              <div v-for="item of recommends">
+                <a :href="item.linkUrl">
+                  <img :src="item.picUrl">
+                </a>
+              </div>   
+          </slider>
+        </div>
+        <div class="recommend-list">
+          <h1 class="list-title">热门歌单推荐</h1>
+          <ul>
+              <li v-for="item of discList" class="item">
+                <img :src="item.imgUrl" class="item-img">
+                <div class="item-info">
+                   <p class="item-desc" v-html="item.desc"></p>
+                   <p class="item-count">播放量：{{item.count}}</p>
+                </div>  
+              </li>       
+          </ul>
+        </div>  
       </div>
   	</scroll>
   </div>
