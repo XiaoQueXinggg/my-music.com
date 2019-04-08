@@ -1,14 +1,26 @@
 <template>
 	<div class="music-list">
-		<div class="header">
-			<router-link tag="div" to="/singer" class="iconfont">&#xe625;</router-link>
-			<h1 class="singer-name">{{this.title}}</h1>
+		<div class='header' ref="header">
+			<div class="header-name" ref="headerName">
+				<router-link tag="div" to="/singer" class="iconfont">&#xe625;</router-link>
+				<h1 class="singer-name">{{this.title}}</h1>
+			</div>
+			<div class="imgContent" ref="imgContent">
+				<img :src="bgstyle" class="bg-image">
+			</div>
 		</div>
-		<div class="bgimage"  :style="bgstyle" ref="bgImg">
-			<img :src="bgstyle" class="bg-image">
+		<div class="randomPlay" ref="randomPlay">
+				<span class="iconfont">&#xe626;</span>
+				<span class="text">随机播放全部</span>
 		</div>
-		<scroll :data="songs" class="songList" ref="list">
-			<song-list :songs="songs">			
+		<scroll
+		:listenScroll="this.listenScroll"
+		@scroll="HandleScroll"
+		:probeType="3"
+		:data="songs"
+		class="scrollSong"
+		ref="list">
+			<song-list :songs="songs" ref="songlist" @select="selectSong">			
 			</song-list>
 		</scroll>
 	</div>
@@ -22,8 +34,28 @@ export default {
 		SongList,
 		Scroll
 	},
+	data() {
+		return {
+			scrollY:-1,
+			probType:3,
+			listenScroll:true,
+			imgHeight:0,
+			songHeight:0
+		}
+	},
 	mounted() {
-		this.$refs.list.$el.style.top = `${this.$refs.bgImg.clientHeight}px`
+		this.$refs.list.$el.style.top = `${this.$refs.imgContent.clientHeight}px`
+		this.$refs.header.style.Heigth = `${this.$refs.imgContent.clientHeight}px`
+		this.imgHeight = this.$refs.imgContent.clientHeight
+		this.songHeight = this.$refs.list.$el.clientHeight
+	},
+	methods:{
+		HandleScroll(pos) {
+			this.scrollY = pos.y
+		},
+		selectSong(song,index) {
+			
+		}
 	},
 	props:{
 		title:{
@@ -43,6 +75,25 @@ export default {
 		bgstyle() {
 			return this.bgImage
 		}
+	},
+	watch:{
+		scrollY(pos) { 
+			if(pos > 0) {
+				this.$refs.header.style.height = ``					
+				this.$refs.randomPlay.style.transform = `translate3d(-50%,0,0)`
+				this.$refs.imgContent.style.height = `${pos}px`
+				return
+			}else {
+				this.$refs.randomPlay.style.transform = `translate3d(-50%,${pos}px,0)`	
+				this.$refs.list.$el.style.overflow = `visible`
+				if((this.imgHeight+pos) <= 25){
+					this.$refs.header.style.height = `25px`
+					return 
+				}	
+				this.$refs.header.style.height = `${this.imgHeight+pos}px`
+			}
+						
+		}
 	}
 }	
 </script>
@@ -52,16 +103,21 @@ export default {
 @import "~common/stylus/mixin"
 	.music-list
 		width:100%
-		.songList
+		.scrollSong
 			position:absolute
 			left:0px
 			bottom:0px
 			overflow:hidden
-			top:262.633px
 		.header
-			position:absolute
-			height:100%
-			width:100%	
+			position:relative
+			width:100%
+			overflow:hidden
+			z-index:10
+			.header-name
+				position:absolute
+				height:100%
+				width:100%
+				z-index:13	
 			.iconfont
 				position:absolute
 				top:0
@@ -77,11 +133,39 @@ export default {
 				font-size:$font-size-large
 				height:25px	
 				line-height:25px
-		.bgimage
-			width:100%
-			height:0
-			padding-bottom:70%
-			overflow:hidden
-			.bg-image
+			.imgContent	
 				width:100%
+				height:0
+				padding-bottom:70%				
+				.bg-image
+					width:100%
+		.randomPlay
+			padding:5px 15px
+			position:absolute
+			z-index:12
+			top:30%
+			left:50%
+			transform:translateX(-50%)
+			height:30px
+			width:140px
+			border:2px solid #ffcd32
+			border-radius:20px
+			display:flex
+			align-items:center
+			content-items:center
+			.iconfont
+				display:inline-block
+				text-align:center
+				font-size:25px
+				line-height:25px
+				width:25px
+				height:25px
+				color:$color-theme 
+			.text
+				margin-left:5px
+				font-size:$font-size-medium-x
+				display:inline-block
+				line-height:25px
+				height:25px
+				color:$color-theme 
 </style>

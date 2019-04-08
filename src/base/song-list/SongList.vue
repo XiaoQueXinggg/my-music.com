@@ -1,10 +1,8 @@
 <template>
 		<ul class='song-list'>
-			<li v-for="song in songs">
-				<div class="content">
-					<h1 class="name">{{song.name}}</h1>
-					<p class="desc">{{song.singer}}.{{song.album}}</p>
-				</div>
+			<li v-for="(song,index) in songs" @click="selectItem(song,index)" class="item">
+				<h1 class="name">{{song.name}}</h1>
+				<p class="desc">{{song.singer}}.{{song.album}}</p>
 			</li>
 		</ul>
 </template>
@@ -17,6 +15,11 @@ export default {
 			default:''
 		}
 	},
+	methods:{
+		selectItem(song,index) {
+			this.$emit('select',song,index)
+		}
+	},
 	computed:{
 	}
 }
@@ -25,7 +28,7 @@ export default {
 <style lang="stylus" scoped>
 @import "~common/stylus/variable"
 @import "~common/stylus/mixin"
-	.content
+	.item
 		padding:15px 0px 10px 40px
 		width:100%
 		.name

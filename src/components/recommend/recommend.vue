@@ -91,6 +91,8 @@ export default {
       .slider-wrapper
         position: relative
         width: 100%
+        height:0px
+        padding-bottom:40%
         overflow: hidden
        .recommend-list
         .list-title

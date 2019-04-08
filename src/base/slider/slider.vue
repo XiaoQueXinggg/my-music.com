@@ -116,7 +116,7 @@
         this.dots = new Array(this.children.length)
       },
       _play() {
-        let pageIndex = this.currentPageIndex + 1
+        let pageIndex = thi/s.currentPageIndex + 1
         if (this.loop) {
           pageIndex += 1
         }
@@ -165,7 +165,5 @@
         border-radius: 50%
         background: $color-text-l
         &.active
-          width: 20px
-          border-radius: 5px
           background: $color-text-ll
 </style>
