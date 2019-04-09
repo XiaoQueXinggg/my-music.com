@@ -27,6 +27,8 @@
 </template>
 
 <script type="text/ecmajavascript">
+import {mapActions} from 'vuex'
+import {mapMutations} from 'vuex'
 import SongList from '@/base/song-list/SongList'
 import Scroll from '@/base/scroll/scroll'
 export default {
@@ -53,9 +55,16 @@ export default {
 		HandleScroll(pos) {
 			this.scrollY = pos.y
 		},
-		selectSong(song,index) {
-			
-		}
+		selectSong(song,index,bgImg) {
+			this.selectPlay({
+				list:this.songs,
+				index:index,
+				bgImg:this.bgImage
+			})
+		},
+		...mapActions([
+			'selectPlay'
+		])
 	},
 	props:{
 		title:{

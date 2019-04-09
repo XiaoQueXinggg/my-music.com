@@ -116,7 +116,7 @@
         this.dots = new Array(this.children.length)
       },
       _play() {
-        let pageIndex = thi/s.currentPageIndex + 1
+        let pageIndex = this.currentPageIndex + 1
         if (this.loop) {
           pageIndex += 1
         }

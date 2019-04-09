@@ -3,7 +3,7 @@ const matutions = {
 	[types.SET_SINGER](state,singer) {
 		state.singer = singer
 	},
-	[types.SET_PALYING_STATE](state,flag){
+	[types.SET_PLAYING_STATE](state,flag){
 		state.playing = flag
 	},
 	[types.SET_FULL_SCREEN](state,flag){
@@ -20,6 +20,9 @@ const matutions = {
 	},
 	[types.SET_CURRENT_INDEX](state,index){
 		state.currentIndex = index
-	},	
+	},
+	[types.SET_BG_IMG](state,bgImg){
+		state.bgImg = bgImg
+	}	
 }
 export default matutions
