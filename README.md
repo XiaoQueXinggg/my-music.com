@@ -63,4 +63,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
       保证写代码时名字的准确性，getters便于组件调用数据，以及简洁化操作，mutations用于对state数据批量修改时使用，因为mustations修改数据的函数需            要单个调用
       
       2，播放器内核组件，分为正常化显示和mini显示，显示状态取决于state中数据，而点击事件会调用mutations函数修改state数据
-  ![动态效果如图]()
+      
+  ![动态效果如图](https://github.com/XiaoQueXinggg/my-music.com/blob/master/src/assets/player.gif)
