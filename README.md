@@ -33,7 +33,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     
     4，对播放器频繁使用的字体，颜色，背景颜色独立为一个代码块，方便后期使用，以及整体css样式的修改。
     
-    5，页面数据采用封装的jsonp函数从qq音乐接口获得，父组件取得数据后，传递给子组件
+    5，对获取数据的函数进行封装，模块化处理，方便后期数据接口改变时减少代码量，页面数据采用封装的jsonp函数从qq音乐接口获得，父组件取得数据后，传递给子组件
     
    ![首页效果查看](https://github.com/XiaoQueXinggg/my-music.com/blob/master/src/assets/home-page.gif)
     
@@ -49,4 +49,18 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     4，对字母表的ul组件添加触摸滚动事件，根据滚动的距离计算出当前手指处于字母的位置，传值给父组件，使得滚动列表做出相应滚动，
     并且在滚动列表使用position:fixed动态显示当前字母区域，根据滚动的距离，使得固定区域的消失具有动效果(主要依据距离使用transform实现)
  ![首页效果查看](https://github.com/XiaoQueXinggg/my-music.com/blob/master/src/assets/singerlist.gif)
+歌单页面开发：
+
+    1,歌单数据通过组件传值的方式实现，对整个歌单页面使用scroll组件封装。
     
+    2，歌单页面的滚动依据滚动距离进行计算，使得图片可以被拉长，也可以被缩短(不会完全被缩短)，歌单子页面显示区域动态变化，便于用户操作
+  
+ ![首页效果查看](https://github.com/XiaoQueXinggg/my-music.com/blob/master/src/assets/songlist.gif)
+ 
+ 播放器内核的实现：
+ 
+      1，使用vue-x组件对一些全局数据进行操作，state可用于需要储存数据的初始化，mutations组件可以对数据进行更改操作，mutations-type组件可以
+      保证写代码时名字的准确性，getters便于组件调用数据，以及简洁化操作，mutations用于对state数据批量修改时使用，因为mustations修改数据的函数需            要单个调用
+      
+      2，播放器内核组件，分为正常化显示和mini显示，显示状态取决于state中数据，而点击事件会调用mutations函数修改state数据
+  ![动态效果如图]()
