@@ -48,5 +48,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     
     4，对字母表的ul组件添加触摸滚动事件，根据滚动的距离计算出当前手指处于字母的位置，传值给父组件，使得滚动列表做出相应滚动，
     并且在滚动列表使用position:fixed动态显示当前字母区域，根据滚动的距离，使得固定区域的消失具有动效果(主要依据距离使用transform实现)
- ![首页效果查看]()
+ ![首页效果查看](https://github.com/XiaoQueXinggg/my-music.com/blob/master/src/assets/singerlist.gif)
     
