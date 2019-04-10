@@ -35,6 +35,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
     
     5，页面数据采用jsonp的方式从qq音乐接口获得，父组件取得数据后，传递给子组件
     
-    ![首页效果查看](https://github.com/XiaoQueXinggg/my-music.com/blob/master/src/assets/home-page.gif)
+   ![首页效果查看](https://github.com/XiaoQueXinggg/my-music.com/blob/master/src/assets/home-page.gif)
     
     
